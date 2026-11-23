@@ -29,7 +29,7 @@ export const about = {
     'Before code, I earned a B.Eng. in Mechanical Engineering from Gadjah Mada University and worked in engineering — designing and manufacturing special-purpose machines, and planning boiler maintenance at a textile plant. That background shapes how I build software: think in systems, keep things reliable, and plan for what can go wrong.',
   ],
   highlights: [
-    { value: '6', label: 'Full-stack projects built' },
+    { value: '7', label: 'Full-stack projects built' },
     { value: '3', label: 'AI-powered applications' },
     { value: 'B.Eng.', label: 'Mechanical Engineering, UGM' },
   ],
@@ -52,6 +52,20 @@ export const projects = [
     tags: ['AI-powered', 'Next.js'],
     image: '/images/bastionfall.jpg',
     liveUrl: 'https://bastionfall.ilham.bond',
+    codeUrl: null,
+  },
+  {
+    title: 'Laundry List',
+    subtitle: 'Laundry Tracker',
+    kind: 'web',
+    type: 'Full-Stack Web App',
+    date: 'Nov 2026',
+    description:
+      'Track what’s in your laundry bag when you drop it off, mark it retrieved when you pick it up, and see what you spend each month. Built with Next.js Server Actions, per-user data in MongoDB.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Server Actions', 'Tailwind CSS', 'MongoDB', 'bcryptjs'],
+    tags: ['Next.js'],
+    image: '/images/laundry-list.jpg',
+    liveUrl: 'https://laundry.ilham.bond',
     codeUrl: null,
   },
   {
