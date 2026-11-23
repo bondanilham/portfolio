@@ -9,7 +9,7 @@ export const site = {
   name: 'Bondan Ilham Akbar',
   title: 'Full-Stack JavaScript Developer',
   tagline:
-    'I build web and mobile apps with React, Next.js and Node.js — from real-time auctions to AI-powered recipe generators — with a mechanical engineer’s eye for systems.',
+    'Full-stack developer with a mechanical engineer’s eye for systems. I build web and mobile apps end to end, and I enjoy the hard parts: real-time systems, game engines and AI features that behave reliably.',
   photo: null, // e.g. '/images/profile.jpg'
   resumeUrl: '/Bondan_Ilham_Akbar_20-11-2026.pdf',
   email: 'me@ilham.bond',
