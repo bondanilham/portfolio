@@ -287,6 +287,29 @@ img {
   font-size: clamp(1.05rem, 3vw, 1.35rem);
   color: var(--text-dim);
 }
+.hero__socials {
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+}
+.hero__socials a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.hero__socials a:hover {
+  color: var(--text);
+  border-color: var(--software);
+  transform: translateY(-2px);
+}
 .hero__rule {
   width: 100%;
   max-width: 560px;

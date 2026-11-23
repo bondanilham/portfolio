@@ -1,5 +1,6 @@
 import { site } from '../data/content'
 import Icon from './Icon'
+import BrandIcon from './BrandIcon'
 
 export default function Hero() {
   const initials = site.name
@@ -18,6 +19,15 @@ export default function Hero() {
         <p className="hero__hello">Hi, I’m</p>
         <h1 className="hero__name">{site.name}</h1>
         <p className="hero__title">{site.title}</p>
+        <ul className="hero__socials">
+          {site.socials.map((s) => (
+            <li key={s.label}>
+              <a href={s.url} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>
+                <BrandIcon name={s.icon} size={22} />
+              </a>
+            </li>
+          ))}
+        </ul>
         <hr className="hero__rule" />
         <p className="hero__tagline">{site.tagline}</p>
         <div className="hero__actions">

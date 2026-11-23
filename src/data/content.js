@@ -17,8 +17,9 @@ export const site = {
   contactText:
     'I’m open to full-stack, front-end and back-end JavaScript roles. The best way to reach me is by email.',
   socials: [
-    { label: 'GitHub', url: 'https://github.com/bondanilham' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/bondan-ilham-akbar/' },
+    // icon: 'github' | 'linkedin' (see src/components/BrandIcon.jsx)
+    { label: 'GitHub', icon: 'github', url: 'https://github.com/bondanilham' },
+    { label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/bondan-ilham-akbar/' },
   ],
 }
 
