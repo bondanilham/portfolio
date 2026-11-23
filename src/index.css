@@ -468,7 +468,9 @@ img {
 .card__media {
   aspect-ratio: 16 / 9;
   width: 100%;
-  object-fit: cover;
+  /* show the whole picture: fits width or height, never crops */
+  object-fit: contain;
+  background: #15171f;
 }
 .card__body {
   padding: 1.3rem;
