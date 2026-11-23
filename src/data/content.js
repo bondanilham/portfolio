@@ -11,7 +11,7 @@ export const site = {
   tagline:
     'I build web and mobile apps with React, Next.js and Node.js — from real-time auctions to AI-powered recipe generators — with a mechanical engineer’s eye for systems.',
   photo: null, // e.g. '/images/profile.jpg'
-  resumeUrl: '/Bondan_Ilham_Akbar_1-11-2026.pdf',
+  resumeUrl: '/Bondan_Ilham_Akbar_20-11-2026.pdf',
   email: 'me@ilham.bond',
   location: 'Jakarta, Indonesia',
   contactText:
