@@ -31,8 +31,8 @@ export default function Hero() {
         <hr className="hero__rule" />
         <p className="hero__tagline">{site.tagline}</p>
         <div className="hero__actions">
-          <a className="btn btn--primary" href={site.resumeUrl} download>
-            <Icon name="download" size={18} /> Resume
+          <a className="btn btn--primary" href={site.resumeUrl} target="_blank" rel="noreferrer">
+            <Icon name="external" size={18} /> Resume
           </a>
           <a className="btn btn--ghost" href="#projects">
             View my work
