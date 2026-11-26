@@ -22,6 +22,6 @@ Almost everything you need to change is in **`src/data/content.js`**:
 - `skills` — grouped skill cards
 
 **Images:** drop files into `public/images/` and set the path, e.g. `photo: '/images/profile.jpg'`.
-Anything left as `null` shows a labelled placeholder. Put your resume PDF in `public/` and set `resumeUrl` to its path, e.g. `'/Bondan_Ilham_Akbar_20-11-2026.pdf'`.
+Anything left as `null` shows a labelled placeholder. Put your resume PDF in `public/files/` and set `resumeUrl` to its path, e.g. `'/files/Bondan_Ilham_Akbar_20-11-2026.pdf'`.
 
 **Colors:** theme tokens are at the top of `src/index.css` (`--software`, `--engineering`, `--neutral`, …).

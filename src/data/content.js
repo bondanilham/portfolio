@@ -11,7 +11,7 @@ export const site = {
   tagline:
     'Full-stack developer with a mechanical engineer’s eye for systems. I build web and mobile apps end to end, and I enjoy the hard parts: real-time systems, game engines and AI features that behave reliably.',
   photo: null, // e.g. '/images/profile.jpg'
-  resumeUrl: '/Bondan_Ilham_Akbar_20-11-2026.pdf',
+  resumeUrl: '/files/Bondan_Ilham_Akbar_20-11-2026.pdf',
   email: 'me@ilham.bond',
   location: 'Jakarta, Indonesia',
   contactText:
