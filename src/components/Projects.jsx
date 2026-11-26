@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { projects, projectFilters } from '../data/content'
 import Section from './Section'
 import Media from './Media'
@@ -32,12 +33,16 @@ export default function Projects() {
       <div className="cards">
         {shown.map((p) => (
           <article key={p.title} className={`card card--${p.kind}`}>
-            <Media src={p.image} alt={`${p.title} screenshot`} label="Add a screenshot" className="card__media" />
+            <Link to={`/projects/${p.slug}`} className="card__media-link" tabIndex={-1} aria-hidden="true">
+              <Media src={p.image} alt={`${p.title} screenshot`} label="Add a screenshot" className="card__media" />
+            </Link>
             <div className="card__body">
               <span className="card__tag">
                 {p.type} · {p.date}
               </span>
-              <h3>{p.title}</h3>
+              <h3>
+                <Link to={`/projects/${p.slug}`}>{p.title}</Link>
+              </h3>
               <p className="card__subtitle">{p.subtitle}</p>
               <p>{p.description}</p>
               <ul className="chips">
@@ -45,20 +50,21 @@ export default function Projects() {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-              {(p.liveUrl || p.codeUrl) && (
-                <div className="card__links">
-                  {p.liveUrl && (
-                    <a href={p.liveUrl} target="_blank" rel="noreferrer">
-                      <Icon name="external" size={16} /> Live demo
-                    </a>
-                  )}
-                  {p.codeUrl && (
-                    <a href={p.codeUrl} target="_blank" rel="noreferrer">
-                      <Icon name="github" size={16} /> Code
-                    </a>
-                  )}
-                </div>
-              )}
+              <div className="card__links">
+                <Link to={`/projects/${p.slug}`} className="card__details">
+                  Details <span aria-hidden="true">→</span>
+                </Link>
+                {p.liveUrl && (
+                  <a href={p.liveUrl} target="_blank" rel="noreferrer">
+                    <Icon name="external" size={16} /> Live demo
+                  </a>
+                )}
+                {p.codeUrl && (
+                  <a href={p.codeUrl} target="_blank" rel="noreferrer">
+                    <Icon name="github" size={16} /> Code
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}

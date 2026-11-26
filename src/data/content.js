@@ -30,6 +30,7 @@ export const about = {
     'Before code, I earned a B.Eng. in Mechanical Engineering from Gadjah Mada University and worked in engineering — designing and manufacturing special-purpose machines, and planning boiler maintenance at a textile plant. That background shapes how I build software: think in systems, keep things reliable, and plan for what can go wrong.',
   ],
   highlights: [
+    { logo: 'javascript', label: 'JavaScript & TypeScript' }, // logo shown in place of a number
     { value: '7', label: 'Full-stack projects built' },
     { value: '3', label: 'AI-powered applications' },
     { value: 'B.Eng.', label: 'Mechanical Engineering, UGM' },
@@ -39,9 +40,12 @@ export const about = {
 // Filter tabs shown above the project cards. Each project lists the tags it matches.
 export const projectFilters = ['AI-powered', 'Next.js', 'React + Express', 'Mobile']
 
+// slug: the URL of the detail page, e.g. /projects/bastionfall
 // kind: 'web' | 'mobile' — controls the card's accent color
+// tech: short list for the card; stack: full list for the detail page
 export const projects = [
   {
+    slug: 'bastionfall',
     title: 'Bastionfall',
     subtitle: 'Fantasy City Defense Game',
     kind: 'web',
@@ -54,8 +58,31 @@ export const projects = [
     image: '/images/bastionfall.jpg',
     liveUrl: 'https://bastionfall.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/bastionfall)
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Context API',
+      'Node.js',
+      'MongoDB',
+      'Zod',
+      'JWT',
+      'bcryptjs',
+      'Google Gemini',
+      'Web Audio API',
+    ],
+    highlights: [
+      'Developed a full-stack city defense game with Next.js and React, where players manage gold, upgrade walls, troops and the city, and survive 100 days — with three difficulty levels, an in-game tutorial, and JWT authentication with bcryptjs password hashing.',
+      'Built a server-side TypeScript game engine for the economy, deterministic battles and rewards, and integrated MongoDB to store game saves, action history, battle reports and sessions.',
+      'Integrated Google Gemini for dynamic story events with Zod response validation and fallback events.',
+      'Developed animated battle scenes using React, Context API and Tailwind CSS, with sound effects powered by the Web Audio API.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'laundry-list',
     title: 'Laundry List',
     subtitle: 'Laundry Tracker',
     kind: 'web',
@@ -68,8 +95,26 @@ export const projects = [
     image: '/images/laundry-list.jpg',
     liveUrl: 'https://laundry.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/laundry-list)
+    stack: [
+      'Next.js 16',
+      'React',
+      'TypeScript',
+      'Server Actions',
+      'Tailwind CSS',
+      'MongoDB',
+      'bcryptjs',
+    ],
+    highlights: [
+      'Built a Next.js App Router app where users log the items in each laundry drop-off, mark them retrieved at pickup, and edit or delete past drop-offs.',
+      'Added a monthly spending summary in Rupiah and a list of saved laundry places, all scoped to the logged-in user.',
+      'Implemented all writes as Server Actions that each verify the current user, with read queries always filtered by user.',
+      'Built session auth from scratch: bcryptjs password hashing and a random session token in an httpOnly cookie, storing only its hash in MongoDB with 30-day expiry, plus a proxy that redirects signed-out visitors to the login page.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'audio-dealer',
     title: 'Audio Dealer',
     subtitle: 'E-Commerce Application',
     kind: 'web',
@@ -82,8 +127,26 @@ export const projects = [
     image: '/images/audio-dealer.jpg',
     liveUrl: 'https://audio-dealer.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/audio-dealer)
+    stack: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'MongoDB',
+      'JWT',
+      'bcryptjs',
+      'react-infinite-scroll-component',
+    ],
+    highlights: [
+      'Developed product catalog and detail pages using Next.js, TypeScript and Tailwind CSS, featuring category-based browsing and color variants.',
+      'Implemented debounced product search and price sorting with MongoDB, alongside infinite scrolling using react-infinite-scroll-component.',
+      'Built wishlist functionality and JWT authentication with bcryptjs.',
+      'Implemented proxy-based route protection and dynamic SEO metadata for product pages using Next.js.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'smart-hammer',
     title: 'Smart Hammer',
     subtitle: 'Real-Time Auction Platform',
     kind: 'web',
@@ -96,8 +159,29 @@ export const projects = [
     image: '/images/smart-hammer.jpg',
     liveUrl: 'https://smart-hammer.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/smart-hammer)
+    stack: [
+      'React',
+      'Context API',
+      'Redux',
+      'Node.js',
+      'Express.js',
+      'Socket.IO',
+      'Supabase',
+      'Sequelize',
+      'OAuth',
+      'GPT-OSS-120B',
+    ],
+    highlights: [
+      'Developed the auction interface using React, Context API and Redux, supporting auction creation and configuration of starting bids, minimum bid increments and auction durations.',
+      'Built backend services using Node.js and Express.js, with Supabase and Sequelize for data persistence.',
+      'Implemented real-time bidding with Socket.IO, including live bid updates, bidder tracking, bidding history and automatic auction closing.',
+      'Integrated OAuth authentication and a GPT-OSS-120B-powered product assistant that answers questions using auction listing details and external sources.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'omakase',
     title: 'Omakase',
     subtitle: 'AI-Powered Recipe Generator',
     kind: 'web',
@@ -110,8 +194,31 @@ export const projects = [
     image: '/images/omakase.jpg',
     liveUrl: 'https://omakase.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/omakase)
+    stack: [
+      'React',
+      'Redux Toolkit',
+      'JavaScript',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'Tailwind CSS',
+      'GPT-OSS-120B',
+      'Google Cloud Vision',
+      'Edamam API',
+      'JWT',
+      'OAuth',
+    ],
+    highlights: [
+      'Developed the frontend using JavaScript, React, Redux Toolkit and Tailwind CSS, implementing ingredient input, recipe browsing and recipe management.',
+      'Built REST APIs using Node.js and Express.js with PostgreSQL to manage user accounts and recipes, with JWT authentication and Google OAuth.',
+      'Integrated Google Cloud Vision for photo-based ingredient recognition from fridge or food photos.',
+      'Used GPT-OSS-120B for recipe generation and the Edamam API for nutritional information.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'mukabuku',
     title: 'MukaBuku',
     subtitle: 'Social Media Application',
     kind: 'mobile',
@@ -124,8 +231,26 @@ export const projects = [
     image: null,
     liveUrl: null,
     codeUrl: null,
+    // Detail page (/projects/mukabuku)
+    stack: [
+      'React Native',
+      'Apollo Client',
+      'Node.js',
+      'Apollo Server',
+      'GraphQL',
+      'MongoDB',
+      'JWT',
+      'bcryptjs',
+    ],
+    highlights: [
+      'Developed an Android social media application using React Native and Apollo Client, featuring user profiles and image-based post creation.',
+      'Built a GraphQL API using Node.js and Apollo Server, integrated with MongoDB to support posts, likes, comments, user following and user search.',
+      'Implemented JWT-based authentication with bcryptjs password hashing and a chronological post feed fetched through Apollo Client and GraphQL queries.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
   {
+    slug: 'ngiflix',
     title: 'NgiFlix',
     subtitle: 'Movie Database',
     kind: 'web',
@@ -138,6 +263,21 @@ export const projects = [
     image: null,
     liveUrl: 'https://ngiflix.ilham.bond',
     codeUrl: null,
+    // Detail page (/projects/ngiflix)
+    stack: [
+      'Node.js',
+      'Express.js',
+      'PostgreSQL',
+      'REST APIs',
+      'JWT',
+      'bcryptjs',
+    ],
+    highlights: [
+      'Developed RESTful APIs using Node.js and Express.js, with PostgreSQL for movie data and JWT authentication with bcryptjs password hashing.',
+      'Implemented movie search, genre filtering and release-date sorting through Express.js endpoints and PostgreSQL queries.',
+      'Built genre-based navigation and query-driven filtering using REST API query parameters to retrieve categorized movie data.',
+    ],
+    gallery: [], // extra screenshots: { src: '/images/…', caption: '…' }
   },
 ]
 

@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router'
 import { site } from '../data/content'
+import useActiveSection from '../hooks/useActiveSection'
 
+// Keep this in the same order as the sections in App.jsx.
 const links = [
-  { href: '#top', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  { id: 'top', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
 ]
+const sectionIds = links.map((l) => l.id)
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+  const sectionOnScreen = useActiveSection(sectionIds)
+  // On a project detail page, highlight "Projects"; elsewhere follow the scroll position.
+  const active = pathname.startsWith('/projects/') ? 'projects' : pathname === '/' ? sectionOnScreen : null
 
   useEffect(() => {
     if (!open) return
@@ -19,6 +27,12 @@ export default function Navbar() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
+
+  const linkProps = (l) => ({
+    to: l.id === 'top' ? '/' : `/#${l.id}`,
+    className: active === l.id ? 'is-active' : undefined,
+    'aria-current': active === l.id ? 'location' : undefined,
+  })
 
   return (
     <>
@@ -34,14 +48,14 @@ export default function Navbar() {
           <span />
           <span />
         </button>
-        <a className="topbar__title" href="#top">
+        <Link className="topbar__title" to="/">
           {site.name}
-        </a>
+        </Link>
         <nav className="topbar__links" aria-label="Primary">
           {links.slice(1).map((l) => (
-            <a key={l.href} href={l.href}>
+            <Link key={l.id} {...linkProps(l)}>
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </header>
@@ -51,9 +65,9 @@ export default function Navbar() {
         <p className="side-menu__name">{site.name}</p>
         <p className="side-menu__role">{site.title}</p>
         {links.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
+          <Link key={l.id} {...linkProps(l)} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
             {l.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </>

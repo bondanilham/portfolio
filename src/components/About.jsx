@@ -1,5 +1,6 @@
 import { about } from '../data/content'
 import Section from './Section'
+import BrandIcon from './BrandIcon'
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       id="about"
       title="About Me"
       banner={about.image}
-      accent="software"
+      accent="neutral"
     >
       <div className="about">
         {about.paragraphs.map((p, i) => (
@@ -17,7 +18,13 @@ export default function About() {
       <ul className="stats">
         {about.highlights.map((h) => (
           <li key={h.label}>
-            <strong>{h.value}</strong>
+            {h.logo ? (
+              <span className="stats__logo">
+                <BrandIcon name={h.logo} size={34} />
+              </span>
+            ) : (
+              <strong>{h.value}</strong>
+            )}
             <span>{h.label}</span>
           </li>
         ))}
